@@ -1,0 +1,6 @@
+SELECT city, COUNT(status) as cancelled_flights_number FROM flights 
+JOIN airports ON flights.departure_airport = airports.airport_code 
+WHERE status='Cancelled'
+GROUP BY city ORDER BY cancelled_flights_number DESC
+LIMIT 5
+;

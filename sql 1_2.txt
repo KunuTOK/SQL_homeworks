@@ -1,0 +1,6 @@
+SELECT model, COUNT(*) as flights_num FROM flights
+JOIN aircrafts ON flights.aircraft_code=aircrafts.aircraft_code
+WHERE status="Arrived"
+GROUP BY model
+ORDER BY flights_num DESC
+;

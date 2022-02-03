@@ -1,0 +1,17 @@
+select departure_airport
+from
+		(
+		select distinct departure_airport, arrival_airport
+		from flights
+		where arrival_airport = 'VKO'
+		group by departure_airport, arrival_airport
+		) as tab1
+left join
+		(
+		select distinct departure_airport as dep1, arrival_airport as arr2
+		from flights
+		where arrival_airport = 'SVO'
+		group by dep1, arr2
+		) as tab2
+on tab1.departure_airport = tab2.dep1
+where dep1 is null

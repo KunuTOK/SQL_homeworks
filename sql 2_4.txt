@@ -1,0 +1,6 @@
+SELECT departure_airport, arrival_airport, count(*) AS amount
+FROM flights
+WHERE arrival_airport <> departure_airport AND scheduled_departure BETWEEN '2017-08-24' AND '2017-08-25'
+GROUP BY departure_airport, arrival_airport
+HAVING count(*) > 1
+ORDER BY amount DESC, departure_airport ASC, arrival_airport ASC

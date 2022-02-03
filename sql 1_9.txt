@@ -1,0 +1,4 @@
+SELECT cast(strftime('%m',scheduled_departure) as integer) as month, COUNT(status) as cancelled_flights_number FROM flights 
+WHERE status='Cancelled'
+GROUP BY month ORDER BY month ASC 
+;

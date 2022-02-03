@@ -1,0 +1,6 @@
+select model, MAX(amount) as amount FROM flights
+join aircrafts on flights.aircraft_code = aircrafts.aircraft_code 
+join ticket_flights on flights.flight_id = ticket_flights.flight_id 
+where fare_conditions='Business'
+GROUP BY model
+;

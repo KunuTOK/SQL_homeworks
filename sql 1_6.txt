@@ -1,0 +1,4 @@
+SELECT cast(strftime('%w', scheduled_departure) as integer) as day_of_week, COUNT(departure_airport) as flights FROM flights 
+WHERE departure_airport='SVO' OR departure_airport='VKO' OR departure_airport='DME'
+GROUP BY day_of_week ORDER BY flights DESC
+;

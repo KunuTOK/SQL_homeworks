@@ -1,0 +1,4 @@
+SELECT SUM(amount) as lost_profit FROM flights 
+JOIN ticket_flights ON flights.flight_id=ticket_flights.flight_id
+WHERE status="Cancelled" AND scheduled_departure>'2017-08-17 00:00:00' AND scheduled_departure<'2017-08-23 00:00:00'
+;

@@ -1,0 +1,1 @@
+SELECT model, range FROM aircrafts WHERE range>1300 AND range<5800 ORDER BY range ASC;
